@@ -1,0 +1,256 @@
+
+  <div class="wrapper-container py-5">
+
+
+
+    <div class="page-daily-inputs">
+      <div class="container-fluid">
+        <div class="title d-flex align-items-center justify-content-between">
+          <div class="left">
+            <div class="bredcrumps mb-4">
+              <a  href="javascript:void(0);"  [routerLink]="['']">الرئيسية</a>
+              <span class="active">Monthly Input</span>
+              
+            </div>
+            <span class="h4 m-0 d-block date-now">{{currentmonthyear}}</span>
+          </div>
+          <div class="right">
+            <span class="h4 m-0 d-block all-costs"> الرصيد : {{balance}} LE </span>
+            <div class="pagination-months mt-4">
+              <button (click)="getnextmonth()"> <i class="icon-right-big"></i> الشهر المقبل </button>
+              <button (click)="getpreviousmonth()">الشهر السابق <i class="icon-left-big"></i> </button>
+            </div>
+          </div>
+        </div>
+        <div class="search-months">
+          <div class="form-group d-flex align-items-center">
+            <span style="width: 15%;" class="mx-3">بحث بالسنوات</span>
+            <select [(ngModel)]="yearsearch" class="form-control"  (change)="changemonthyear()">
+                <option *ngFor="let item of years" value="{{item}}">{{item}}</option>
+            </select>
+          </div>
+          <div class="form-group d-flex align-items-center">
+            <span style="width: 15%;" class="mx-3">اختر الشهر</span>
+            <select [(ngModel)]="monthsearch" class="form-control"  (change)="changemonthyear()">
+                <option *ngFor="let item of months" value="{{item}}">{{item}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <!-- Table -->
+            <div class="title-table">
+              <table class="table table-dark text-center m-0">
+                <thead>
+                  <tr>
+                    <th>المنصرف</th>
+                  </tr>
+                  <tr>
+                    <th> اجمالي المنصرف : {{totalexpense}} LE</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table id="dyanmictable" class="table-datatable table table-bordered table-striped table-hover table-condensed  text-center">
+                <thead>
+                  <tr>
+                    <th>م</th>
+                    <th>المبلغ</th>
+                    <th>البند</th> 
+                    <th>المشروع</th>
+                    <th>المقاول</th>
+                    <th>تكلفة البند</th>
+                    <th>التاريخ</th>
+                    <th>ملاحظات</th>
+                    <th>
+                      <!-- <button [disabled]="disabled" id="addNewRow2" class="btn btn-primary btn-sm" (click)="submitchanges()">حفظ المتغيرات</button> -->
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of expenses; let i=index">
+                    <td>
+                      {{i+1}}
+                    </td>
+                    <td>
+                      {{item.expenseamount}}
+                    </td>
+                    <td>
+                      {{item.description}}
+                    </td>
+                   
+                    <td>
+                      {{item.projectname}}
+                    </td>
+                    <td>
+                      {{item.contractorname}}
+                    </td>
+                    <td>
+                      {{item.taskcostname}}
+                    </td>
+                    <td>
+                      {{item.createdat | date:'yyyy-MM-dd'}}
+                    </td>
+                    <td>
+                      {{item.notes}}
+                    </td>
+                    <td>
+                      <button type="button" id="bEdit" class=" btn btn-sm btn-default" (click)="rowEdit(item);">
+                        <span class="icon-edit"> </span>
+                      </button>
+                      <button type="button" id="bElim" class=" btn btn-sm btn-default" (click)="rowElim(item);">
+                        <span class="icon-trash-empty"> </span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="">#</td>
+                    <td style="min-width: 100px;" class="editthis"><input [(ngModel)]="expenseamount" type="text" class="form-control"></td>
+                    <td style="min-width: 200px;" class="editthis"><input type="text" [(ngModel)]="description" class="form-control"> </td>
+                  
+                    <td style="min-width: 100px;" class="selectable">
+                      <select class="form-control" [(ngModel)]="projectid">
+                        <option value="">المشروع</option>
+                        <option *ngFor="let item of projects" value="{{item.id}}">
+                        {{item.name}} </option>
+                      </select>
+                    </td>
+                    <td style="min-width: 100px;" class="selectable">
+                      <select class="form-control" [(ngModel)]="contractorid">
+                        <option value="">المقاول</option>
+                        <option *ngFor="let item of contractors" value="{{item.id}}">
+                          {{item.name}} </option>
+                      </select>
+                    </td>
+                    <td style="min-width: 150px;" class="selectable">
+                      <select class="form-control" [(ngModel)]="taskcostid">
+                        <option value="">تكلفة البند</option>
+                        <option *ngFor="let item of taskcosts" value="{{item.id}}">{{item.name}}</option>
+                      </select>
+                    </td>
+                    <td style="min-width: 100px;" class=""> <input type="date" [(ngModel)]="createdat" class="form-control"> </td>
+                    <td style="min-width: 200px;" class="editthis"> <input type="text" [(ngModel)]="notes" class="form-control"> </td>
+                    <td>
+                      <div class="btn-group pull-right">
+                        <button type="button" id="bAcep" class=" btn btn-sm btn-default" (click)="additemexpense(currentitemid,expenseamount,description,taskcostid,projectid,contractorid,createdat,notes)"  >
+                          <span class="icon-ok"> </span>
+                        </button>  
+                                                                 
+                      </div>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <!-- Table -->
+            <div class="title-table">
+              <table class="table table-dark text-center m-0">
+                <thead>
+                  <tr>
+                    <th> الايرادات </th>
+                  </tr>
+                  <tr>
+                    <th> إجمالي الايرادات : {{totalincome}} </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table id="dyanmictable2" class="table-datatable table table-striped table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th>م</th>
+                    <th>المبلغ</th>
+                    <th style="min-width: 200px">البند</th>
+                    <th>المشروع</th>
+                    <th>التاريخ</th>
+                    <th>
+                      <!-- <button [disabled]="disabled2" id="addNewRow2" class="btn btn-primary btn-sm" (click)="submitchangesincome()">حفظ المتغيرات</button> -->
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      0
+                    </td>
+                    <td>
+                      {{previousbalance}}
+                    </td>
+                    <td>
+                      previous balane
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+
+                  <tr *ngFor="let item of incomes; let i=index">
+                    <td>
+                      {{i+1}}
+                    </td>
+                    <td>
+                      {{item.incomeamount}}
+                    </td>
+                    <td>
+                      {{item.description}}
+                    </td>
+                
+                    <td>
+                      {{item.projectname}}
+                    </td>
+                  
+                    <td>
+                      {{item.createdat | date:'yyyy-MM-dd'}}
+                    </td>
+                    <td>
+                      <button type="button" id="bEdit" class=" btn btn-sm btn-default" (click)="rowEditincom(item);">
+                        <span class="icon-edit"> </span>
+                      </button>
+                      <button type="button" id="bElim" class=" btn btn-sm btn-default" (click)="rowElim(item);">
+                        <span class="icon-trash-empty"> </span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="">#</td>
+                    <td style="min-width: 100px;" class="editthis"><input [(ngModel)]="incomeamount" type="text" class="form-control"></td>
+                    <td style="min-width: 200px;" class="editthis"><input type="text" [(ngModel)]="incomedescription" class="form-control"> </td>
+                    <td style="min-width: 100px;" class="selectable">
+                      <select class="form-control" [(ngModel)]="incomeprojectid">
+                        <option value="">المشروع</option>
+                        <option *ngFor="let item of projects" value="{{item.id}}">
+                        {{item.name}} </option>
+                      </select>
+                    </td>
+                   
+                    <td style="min-width: 100px;" class=""> <input type="date" [(ngModel)]="incomecreatedat" class="form-control"> </td>
+                    <td>
+                      <div class="btn-group pull-right">
+                        <button type="button" id="bAcep" class=" btn btn-sm btn-default" (click)="additemincome(incomecurrentitemid,incomeamount,incomedescription,incomeprojectid,incomecreatedat)"  >
+                          <span class="icon-ok"> </span>
+                        </button>                                           
+                      </div>
+                      </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>

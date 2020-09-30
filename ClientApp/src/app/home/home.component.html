@@ -1,0 +1,88 @@
+
+
+  <div class="wrapper-container py-5">
+
+    
+
+    <section class="home-page">
+      <div class="container-fluid">
+
+        <div class="logo mb-5">
+          <img src="/assets/imgs/logo.png" class="img-fluid" alt="">
+        </div>
+
+        <div class="home-links">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-3">
+              <a href="javascript:void(0);"  [routerLink]="['/monthlyinput']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/daily-inputs.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">Monthly Input</span>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="javascript:void(0);"  [routerLink]="['/projects']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/projects.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">المشاريع</span>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="javascript:void(0);"  [routerLink]="['/contractors']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/contractor.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">المقاولين</span>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="javascript:void(0);"  [routerLink]="['/customexpenses']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/expenses.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block"> المصاريف الخاصه</span>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a  href="javascript:void(0);"  [routerLink]="['/userone']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/users.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">المهندس / ابراهيم</span>
+              </a>
+            </div>
+            <div class="col-md-3">
+              <a href="javascript:void(0);"  [routerLink]="['/usertwo']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/users.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">المهندس / محمد </span>
+              </a>
+            </div>
+             <div class="col-md-3">
+              <a href="javascript:void(0);"  [routerLink]="['/taskcosts']" class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/incoming.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">تكلفة البنود</span>
+              </a>
+            </div> 
+            <div class="col-md-3">
+              <a  href="javascript:void(0);"  [routerLink]="['/totalprofits']"  class="link-item text-center d-block">
+                <img src="/assets/imgs/icons-homepage/profits.png" class="img-fluid" alt="">
+                <span class="mt-3 d-block">إجمالي الأرباح</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-section mt-5">
+          <div class="row">
+
+            <div class="col-md-3"></div>
+
+            <div class="col-md-6">
+              <!-- Chart Status -->
+              <div class="chart-container">
+                <canvas id="chart"></canvas>
+              </div>
+            </div>
+            
+            <div class="col-md-3"></div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+

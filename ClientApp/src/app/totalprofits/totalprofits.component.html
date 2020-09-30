@@ -1,0 +1,52 @@
+
+  <div class="wrapper-container py-5">
+
+    
+
+    <div class="page-table-big page-total-profits">
+      <div class="container-fluid">
+        <div class="title d-flex align-items-center justify-content-between">
+          <div class="left">
+            <div class="bredcrumps mb-4">
+              <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
+              <span class="active"> اجمالى الأرباح </span>
+            </div>
+          </div>
+          <div class="right">
+            <!-- <span class="h4 m-0 d-block all-costs mb-4"> الرصيد : 500.000 LE </span> -->
+            <a href="" class="h4 m-0 d-block all-costs btn-exportexcel"> تصدير Excel </a>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="table-responsive">
+            <div class="search-months">
+              <div class="form-group d-flex align-items-center">
+                <span style="width: 15%;" class="mx-3">بحث بالسنوات</span>
+                <select [(ngModel)]="year" class="form-control"  (change)="getmonthsprofits()">
+                    <option *ngFor="let item of years" value="{{item.year}}">{{item.year}}</option>
+                </select>
+              </div>
+            </div>
+            <table class="table table-light table-striped table-bordered text-center">
+              <thead>
+                <tr>
+                  <th>الشهر</th>
+                  <th> المبلغ </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of months ;let i=index;">
+                    <th> {{item.month}} </th>
+                    <td> {{item.amountprofit}} LE </td>
+                  </tr>
+             
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,34 @@
+
+
+
+@media (max-width: 767px) {
+  .bg-style {
+    height: 100%;
+  }
+  .page-login {
+    width: 90%;
+    padding: 2rem 1rem;
+  }
+
+  .page-daily-inputs .row > div {
+    margin-bottom: 2rem;
+  }
+
+}
+
+
+@media (max-width: 580px) {
+
+  .title {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .title > div {
+    margin-bottom: 1rem;
+  }
+
+  div.dataTables_wrapper div.dataTables_filter label {
+    width: 100%;
+  }
+
+}

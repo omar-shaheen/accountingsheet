@@ -1,0 +1,85 @@
+
+  <div class="wrapper-container py-5">
+
+    
+
+    <div class="page-daily-inputs page-projects">
+      <div class="container-fluid">
+        <div class="title d-flex align-items-center justify-content-between">
+          <div class="left">
+            <div class="bredcrumps mb-4">
+              <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
+              <span class="active">تكلفة البنود </span>
+            </div>
+          </div>
+          <div class="right">
+             <!-- <span class="h4 m-0 d-block all-costs mb-4"> الرصيد : 500.000 LE </span>  -->
+            <a href="" class="h4 m-0 d-block all-costs btn-exportexcel"> تصدير Excel </a>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table id="dyanmictable" class="table-datatable table table-striped table-bordered text-center">
+            <thead>
+              <tr>
+                <th>#</th>
+                <!-- <th> task code </th> -->
+                <th> البند  </th>
+                <th> اجمالى التكلفة </th>
+                <th>
+                    <!-- <button [disabled]="disabled" id="addNewRow" class="btn btn-primary btn-sm" (click)="suubmittaskcostschanges()">save changes</button> -->
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of taskcosts; let i=index">
+                    <td>
+                      {{i+1}}
+                    </td>
+                    <!-- <td>
+                      {{item.id}}
+                    </td> -->
+                    <td>
+                     <a href="javascript:void(0);"  [routerLink]="['/taskcost',item.id]" >{{item.name}}</a> 
+                    </td>
+                    <td>
+                      {{item.total}}
+                    </td>
+                   
+                   
+                    <td>
+                      <button type="button" id="bEdit" class=" btn btn-sm btn-default" (click)="rowEdit(item);">
+                        <span class="icon-edit"> </span>
+                      </button>
+                      <button type="button" id="bElim" class=" btn btn-sm btn-default" (click)="rowElim(item);">
+                        <span class="icon-trash-empty"> </span>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="">#</td>
+                    <!-- <td style="min-width: 100px;" class="editthis"></td> -->
+                    <td style="min-width: 200px;" class="editthis"><input type="text" [(ngModel)]="contractorname" class="form-control"> </td>
+                   <td>
+                       0
+                   </td>
+                  
+                    <td>
+                      <div class="btn-group pull-right">
+                        <button type="button" id="bAcep" class=" btn btn-sm btn-default" (click)="addcontractor(contractorcurrentitemid,contractorname)"  >
+                          <span class="icon-ok"> </span>
+                        </button>  
+                                                                 
+                      </div>
+                      </td>
+                  </tr>
+            </tbody>
+          </table>
+           <input type="hidden" class="holdkey" value="@lastcode">
+               <input type="hidden" class="holdorder" value="@i">
+        </div>
+
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,117 @@
+
+  <div class="wrapper-container py-5">
+
+    
+
+    <div class="page-daily-inputs">
+      <div class="container-fluid">
+        <div class="title d-flex align-items-center justify-content-between">
+          <div class="left">
+            <div class="bredcrumps mb-4">
+              <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
+              <span class="active"> المهندس محمد </span>
+            </div>
+          </div>
+          <div class="right">
+            <span class="h4 m-0 d-block all-costs"> الرصيد : {{balance}} LE </span>
+          </div>
+        </div>
+        
+        <strong class="user-title text-center"> المهندس محمد </strong>
+
+        <div class="row">
+          <div class="col-md-6">
+            <!-- Table -->
+            <div class="title-table">
+              <table class="table text-center m-0">
+                <thead>
+                  <tr>
+                    <th> العهدة </th>
+                  </tr>
+                  <tr>
+                    <th>   اجمالي العهدة :  {{totalincome}} LE </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th>م</th>
+                    <th>العهدة</th>
+                    <th>التاريخ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of incomes; let i=index">
+                        <td>
+                          {{i+1}}
+                        </td>
+                        <td>
+                          {{item.incomeamount}}
+                        </td>
+                             
+                        <td>
+                          {{item.createdat | date:'yyyy-MM-dd'}}
+                        </td>
+                   </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+
+          <div class="col-md-6">
+            <!-- Table -->
+            <div class="title-table">
+              <table class="table text-center m-0">
+                <thead>
+                  <tr>
+                    <th> الواصل </th>
+                  </tr>
+                  <tr>
+                    <th>   اجمالي الواصل له : {{totalexpense}}  LE </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th>م</th>
+                    <th>المبلغ</th>
+                    <th>التاريخ</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of expenses; let i=index">
+                        <td>
+                          {{i+1}}
+                        </td>
+                        <td>
+                          {{item.expenseamount}}
+                        </td>
+                        <!-- <td>
+                          {{item.description}}
+                        </td> -->
+                        <td>
+                          {{item.createdat | date:'yyyy-MM-dd'}}
+                        </td>
+                   </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+

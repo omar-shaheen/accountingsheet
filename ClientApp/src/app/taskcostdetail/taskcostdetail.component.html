@@ -1,0 +1,75 @@
+
+
+  <div class="wrapper-container py-5">
+
+    
+
+    <div class="page-daily-inputs">
+      <div class="container-fluid">
+        <div class="title d-flex align-items-center justify-content-between">
+          <div class="left">
+            <div class="bredcrumps mb-4">
+              <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
+              <a href="javascript:void(0);"  [routerLink]="['/taskcosts']" > تكلفة البنود </a>
+              <span class="active"> تفاصيل تكلفة البنود </span>
+            </div>
+          </div>
+          <div class="right">
+             <!-- <span class="h4 m-0 d-block all-costs mb-4">  الرصيد :  balance LE </span>  -->
+            <a href="" class="h4 m-0 d-block all-costs btn-exportexcel"> تصدير Excel </a>
+          </div>
+        </div>
+       <strong class="user-title text-center"> {{taskcostname}} </strong>
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Table -->
+            <div class="title-table">
+              <table class="table table-dark text-center m-0">
+                <thead>
+                  
+                  <tr>
+                    <th>اجمالى التكلفة على البند</th>
+                  </tr>
+                  <tr>
+                    <th> اجمالي  التكلفة : {{totalexpense}} LE </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table-datatable table table-striped table-bordered text-center">
+                <thead>
+                  <tr>
+                    <th>م</th>
+                    <th>المبلغ</th>
+                    <th> المشروع </th>
+                  </tr>
+                </thead>
+                <tbody>
+                       <tr *ngFor="let item of expenses; let i=index">
+                        <td>
+                          {{i+1}}
+                        </td>
+                        <td>
+                          {{item.expenseamount}}
+                        </td>
+                        <td>
+                          {{item.projectname}}
+                        </td>
+                        
+                        </tr>
+                
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
