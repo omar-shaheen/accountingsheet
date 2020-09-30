@@ -5597,19 +5597,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ahmed\\.nuget\\packages\\": {}
+    "C:\\Users\\FrootInnBIG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ahmed2\\accountingsheet\\ACCOUNTINGSHEET.csproj",
+      "projectUniqueName": "C:\\Users\\FrootInnBIG\\Desktop\\Working\\elazp\\accountingsheet\\ACCOUNTINGSHEET.csproj",
       "projectName": "ACCOUNTINGSHEET",
-      "projectPath": "D:\\ahmed2\\accountingsheet\\ACCOUNTINGSHEET.csproj",
-      "packagesPath": "C:\\Users\\ahmed\\.nuget\\packages\\",
-      "outputPath": "D:\\ahmed2\\accountingsheet\\obj\\",
+      "projectPath": "C:\\Users\\FrootInnBIG\\Desktop\\Working\\elazp\\accountingsheet\\ACCOUNTINGSHEET.csproj",
+      "packagesPath": "C:\\Users\\FrootInnBIG\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\FrootInnBIG\\Desktop\\Working\\elazp\\accountingsheet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ahmed\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\FrootInnBIG\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"

@@ -2,7 +2,7 @@
 
   <div class="wrapper-container py-5">
 
-    
+
 
     <div class="page-daily-inputs">
       <div class="container-fluid">
@@ -11,22 +11,24 @@
             <div class="bredcrumps mb-4">
               <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
               <a href="javascript:void(0);"  [routerLink]="['/taskcosts']" > تكلفة البنود </a>
-              <span class="active"> تفاصيل تكلفة البنود </span>
             </div>
           </div>
+
+          <strong class="user-title text-center"> تفاصيل تكلفة </strong>
+
           <div class="right">
              <!-- <span class="h4 m-0 d-block all-costs mb-4">  الرصيد :  balance LE </span>  -->
             <a href="" class="h4 m-0 d-block all-costs btn-exportexcel"> تصدير Excel </a>
           </div>
         </div>
-       <strong class="user-title text-center"> {{taskcostname}} </strong>
+        
         <div class="row">
           <div class="col-md-12">
             <!-- Table -->
             <div class="title-table">
               <table class="table table-dark text-center m-0">
                 <thead>
-                  
+
                   <tr>
                     <th>اجمالى التكلفة على البند</th>
                   </tr>
@@ -57,9 +59,9 @@
                         <td>
                           {{item.projectname}}
                         </td>
-                        
+
                         </tr>
-                
+
                 </tbody>
               </table>
             </div>

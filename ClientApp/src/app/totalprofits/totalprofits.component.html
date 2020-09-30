@@ -1,7 +1,7 @@
 
   <div class="wrapper-container py-5">
 
-    
+
 
     <div class="page-table-big page-total-profits">
       <div class="container-fluid">
@@ -9,9 +9,11 @@
           <div class="left">
             <div class="bredcrumps mb-4">
               <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
-              <span class="active"> اجمالى الأرباح </span>
             </div>
           </div>
+
+          <strong class="user-title text-center"> اجمالى الأرباح </strong>
+
           <div class="right">
             <!-- <span class="h4 m-0 d-block all-costs mb-4"> الرصيد : 500.000 LE </span> -->
             <a href="" class="h4 m-0 d-block all-costs btn-exportexcel"> تصدير Excel </a>
@@ -40,7 +42,7 @@
                     <th> {{item.month}} </th>
                     <td> {{item.amountprofit}} LE </td>
                   </tr>
-             
+
               </tbody>
             </table>
           </div>

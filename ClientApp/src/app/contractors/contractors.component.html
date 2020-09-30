@@ -1,7 +1,7 @@
 
   <div class="wrapper-container py-5">
 
-    
+
 
     <div class="page-daily-inputs page-projects">
       <div class="container-fluid">
@@ -9,9 +9,11 @@
           <div class="left">
             <div class="bredcrumps mb-4">
               <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
-              <span class="active"> المقاولين </span>
             </div>
           </div>
+
+          <strong class="user-title text-center"> المقاولين </strong>
+
           <div class="right">
              <!-- <span class="h4 m-0 d-block all-costs mb-4"> الرصيد : 500.000 LE </span>  -->
             <a href="" class="h4 m-0 d-block all-costs btn-exportexcel"> تصدير Excel </a>
@@ -40,13 +42,13 @@
                       {{item.id}}
                     </td> -->
                     <td>
-                     <a href="javascript:void(0);"  [routerLink]="['/contractor',item.id]" >{{item.name}}</a> 
+                     <a href="javascript:void(0);"  [routerLink]="['/contractor',item.id]" >{{item.name}}</a>
                     </td>
                     <td>
                       {{item.total}}
                     </td>
-                   
-                   
+
+
                     <td>
                       <button type="button" id="bEdit" class=" btn btn-sm btn-default" (click)="rowEdit(item);">
                         <span class="icon-edit"> </span>
@@ -63,13 +65,13 @@
                    <td>
                        0
                    </td>
-                  
+
                     <td>
                       <div class="btn-group pull-right">
                         <button type="button" id="bAcep" class=" btn btn-sm btn-default" (click)="addcontractor(contractorcurrentitemid,contractorname)"  >
                           <span class="icon-ok"> </span>
-                        </button>  
-                                                                 
+                        </button>
+
                       </div>
                       </td>
                   </tr>

@@ -1,7 +1,7 @@
 
   <div class="wrapper-container py-5">
 
-    
+
 
     <div class="page-daily-inputs">
       <div class="container-fluid">
@@ -9,15 +9,15 @@
           <div class="left">
             <div class="bredcrumps mb-4">
               <a href="javascript:void(0);"  [routerLink]="['']"> الرئيسية </a>
-              <span class="active"> المهندس محمد </span>
             </div>
           </div>
+
+          <strong class="user-title text-center"> المهندس محمد </strong>
+
           <div class="right">
             <span class="h4 m-0 d-block all-costs"> الرصيد : {{balance}} LE </span>
           </div>
         </div>
-        
-        <strong class="user-title text-center"> المهندس محمد </strong>
 
         <div class="row">
           <div class="col-md-6">
@@ -52,9 +52,9 @@
                         <td>
                           {{item.incomeamount}}
                         </td>
-                             
+
                         <td>
-                          {{item.createdat | date:'yyyy-MM-dd'}}
+                          {{item.createdat | date:'dd-MM-yyyy'}}
                         </td>
                    </tr>
                 </tbody>
@@ -99,7 +99,7 @@
                           {{item.description}}
                         </td> -->
                         <td>
-                          {{item.createdat | date:'yyyy-MM-dd'}}
+                          {{item.createdat | date:'dd-MM-yyyy'}}
                         </td>
                    </tr>
                 </tbody>
