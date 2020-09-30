@@ -32,7 +32,7 @@ namespace ACCOUNTINGSHEET
             
           // services.AddRazorPages();
            services.AddDbContext<DB_A66DAB_accountingsheetContext>(options =>
-           options.UseSqlServer(Configuration.GetConnectionString("sqlconlocal")), ServiceLifetime.Scoped);
+           options.UseSqlServer(Configuration.GetConnectionString("sqlconserver")), ServiceLifetime.Scoped);
            services.Configure<Audience>(Configuration.GetSection("Audience"));
            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
