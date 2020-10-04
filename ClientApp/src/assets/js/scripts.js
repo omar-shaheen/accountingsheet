@@ -7,7 +7,7 @@ $(document).ready(function () {
   // $('#DyanmicTable').SetEditable({ $addButton: $('#addNewRow')});
   // $('.dyanmictable').SetEditable({ $addButton: $('.addNewRow')});
   // $('#dyanmictable2').SetEditableTwo({ $addButtonTwo: $('#addNewRow')});
-  
+
   // $(".test-table").FullTable({
   //   "editable":true,
   //   "filterable":false,
@@ -63,7 +63,11 @@ $(document).ready(function () {
 
 
 
-  
+  $(".scrollto").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".thisscroll").offset().top
+    }, 1000);
+  });
 
 
 });
